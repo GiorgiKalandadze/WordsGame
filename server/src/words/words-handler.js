@@ -1,7 +1,6 @@
 const { RESULT_CODES, RESULT_STATUSES } = require('../constants');
 const DBManager = require('../DBManager');
 const constants = require('../constants');
-const {promises: fs} = require('fs');
 
 // TODO: Make it as util function and make more general
 function shuffleArray(array) {
@@ -12,12 +11,17 @@ function shuffleArray(array) {
 }
 
 async function getWordsList(request, response) {
+	const limit = parseInt(request.query.limit, 10) || 1000;
+	const skip = parseInt(request.query.skip, 10) || 0;
+
 	let wordsList =
-		await getMockWordsList() ||
+		(await getMockWordsList()) ||
 		(await DBManager.getManyDocuments(
 			constants.MONGO.DB_NAME,
 			constants.MONGO.WORDS_COLLECTION,
-			{}
+			{},
+			skip,
+			limit
 		));
 	shuffleArray(wordsList);
 	return response.json({
@@ -34,7 +38,6 @@ async function getMockWordsList() {
 	const wordsFilePath = path.join(__dirname, 'mock-words.json');
 	const data = await fs.readFile(wordsFilePath, 'utf8');
 	return JSON.parse(data);
-
 }
-module.exports = { getWordsList };
 
+module.exports = { getWordsList };

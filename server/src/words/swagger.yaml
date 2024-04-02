@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+    title: Words API
+    version: 1.0.0
+paths:
+    /words:
+        get:
+            summary: Get a list of words
+            parameters:
+                - in: query
+                  name: limit
+                  schema:
+                      type: integer
+                      default: 1000
+                  required: false
+                  description: Limit number of words returned
+                - in: query
+                  name: skip
+                  schema:
+                      type: integer
+                      default: 0
+                  required: false
+                  description: Number of words to skip for pagination
+            responses:
+                200:
+                    description: Successfully retrieved words list
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    resultCode:
+                                        type: string
+                                    resultStatus:
+                                        type: string
+                                    message:
+                                        type: string
+                                    data:
+                                        type: object
+                                        properties:
+                                            wordsList:
+                                                type: array
+                                                items:
+                                                    $ref: '#/components/schemas/word'
+components:
+    schemas:
+        word:
+            type: object
+            properties:
+                source:
+                    type: string
+                target:
+                    type: string
+                category:
+                    type: array
+                    items:
+                        type: string

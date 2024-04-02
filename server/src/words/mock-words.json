@@ -16,5 +16,30 @@
       "personality",
       "character"
     ]
+  },
+  {
+    "source": "tall",
+    "target": "alto",
+    "category": [
+      "adjective",
+      "personality",
+      "body"
+    ]
+  },
+  {
+    "source": "strong",
+    "target": "forte",
+    "category": [
+      "adjective",
+      "personality",
+      "character"
+    ]
+  },
+  {
+    "source": "famous",
+    "target": "famoso",
+    "category": [
+      "adjective"
+    ]
   }
 ]
