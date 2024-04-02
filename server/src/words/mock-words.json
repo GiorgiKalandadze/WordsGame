@@ -1,0 +1,20 @@
+[
+  {
+    "source": "funny",
+    "target": "divertente",
+    "category": [
+      "adjective",
+      "personality",
+      "character"
+    ]
+  },
+  {
+    "source": "shy",
+    "target": "timido",
+    "category": [
+      "adjective",
+      "personality",
+      "character"
+    ]
+  }
+]
