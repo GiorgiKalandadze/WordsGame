@@ -3,7 +3,7 @@ info:
     title: Words API
     version: 1.0.0
 paths:
-    /words:
+    /v1/words:
         get:
             summary: Get a list of words
             parameters:

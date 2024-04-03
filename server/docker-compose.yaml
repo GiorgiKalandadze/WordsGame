@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  server:
+    image: node:20
+    container_name: words-game-server-container
+    ports:
+      - "8080:6000"
+    working_dir: /app
+    command: sh -c "npm install && npm run start:dev"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
