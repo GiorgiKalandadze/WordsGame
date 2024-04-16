@@ -15,7 +15,7 @@ async function getWordsList(request, response) {
 	const skip = parseInt(request.query.skip, 10) || 0;
 
 	let wordsList =
-		(await getMockWordsList()) ||
+		// (await getMockWordsList()) ||
 		(await DBManager.getManyDocuments(
 			constants.MONGO.DB_NAME,
 			constants.MONGO.WORDS_COLLECTION,

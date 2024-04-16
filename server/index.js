@@ -22,18 +22,18 @@ if (process.env.NODE_ENV === ENVIRONMENTS.LOCALHOST) {
 	app.use(cors({ origin: '*' }));
 }
 
-// if (process.env.NODE_ENV === ENVIRONMENTS.PRODUCTION) {
-// 	app.use(express.static(path.join(__dirname, 'public')));
-// }
+if (process.env.NODE_ENV === ENVIRONMENTS.PRODUCTION) {
+	app.use(express.static(path.join(__dirname, 'public')));
+}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', router);
 app.get('/', (req, res) => {
-	// if (process.env.NODE_ENV === ENVIRONMENTS.PRODUCTION) {
-	// 	return res.sendFile(path.join(__dirname, 'public', 'index.html'));
-	// }
+	if (process.env.NODE_ENV === ENVIRONMENTS.PRODUCTION) {
+		return res.sendFile(path.join(__dirname, 'public', 'index.html'));
+	}
 
 	return res.status(200).json({
 		resultCode: RESULT_CODES.SUCCESS,

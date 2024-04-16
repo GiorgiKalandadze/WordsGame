@@ -15,8 +15,8 @@ const ENVIRONMENTS = {
 };
 
 const MONGO = {
-	DB_NAME: 'backend-database',
-	WORDS_COLLECTION: 'words'
+	DB_NAME: 'words-game-prod',
+	WORDS_COLLECTION: 'words-list'
 };
 
 module.exports = {
