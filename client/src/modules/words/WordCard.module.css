@@ -1,0 +1,15 @@
+.card {
+    border: 1px solid black;
+    border-radius: var(--border-radius-default);
+    padding: var(--spacing-24);
+    width: 300px;
+    font-size: 1.9rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.clickable {
+    cursor: pointer;
+}

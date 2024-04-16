@@ -1,0 +1,19 @@
+.container {
+    margin: var(--spacing-64);
+    padding: var(--spacing-24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: var(--spacing-24);
+}
+
+.card-items {
+    display: flex;
+    gap: var(--spacing-16);
+}
+
+@media (max-width: 768px) {
+    .card-items {
+        flex-direction: column;
+    }
+}
