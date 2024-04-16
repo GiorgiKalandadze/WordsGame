@@ -1,0 +1,76 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+
+  --border-radius-small: 4px;
+  --border-radius-default: 8px;
+  --border-radius-large: 12px;
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-64: 64px;
+
+  /* Primary colors */
+  --color-primary-main: #1976d2; /* Example: Blue 700 */
+  --color-primary-light: #42a5f5; /* Example: Blue 400 */
+  --color-primary-dark: #1565c0; /* Example: Blue 800 */
+
+  /* Secondary colors */
+  --color-secondary-main: #9c27b0; /* Example: Purple 500 */
+  --color-secondary-light: #ba68c8; /* Example: Purple 400 */
+  --color-secondary-dark: #7b1fa2; /* Example: Purple 700 */
+
+  /* Error colors */
+  --color-error-main: #d32f2f; /* Example: Red 700 */
+  --color-error-light: #ef5350; /* Example: Red 400 */
+  --color-error-dark: #c62828; /* Example: Red 800 */
+
+  /* Additional color intentions */
+  --color-warning-main: #ed6c02; /* Example: Orange 800 */
+  --color-info-main: #0288d1; /* Example: Light Blue 700 */
+  --color-success-main: #2e7d32; /* Example: Green 800 */
+
+  --MEDIA-CHECKPOINT-XSMALL: 600px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
