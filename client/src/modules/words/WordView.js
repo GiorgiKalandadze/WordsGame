@@ -1,6 +1,6 @@
 import WordCard from './WordCard';
 import {useState} from 'react';
-import useFetch from '../../common/useFetch';
+import useFetch from '../../common/custom-hooks/useFetch';
 import Button from '@mui/material/Button';
 import config from '../../config';
 import styles from './WordView.module.css';

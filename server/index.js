@@ -6,19 +6,28 @@ const app = express();
 const router = require('./src/routes');
 const cors = require('cors');
 const path = require('path');
-const DBManager = require('./src/DBManager');
+const DBManager = require('./src/common/DBManager');
 const {
 	RESULT_CODES,
 	RESULT_STATUSES,
 	ENVIRONMENTS
-} = require('./src/constants');
+} = require('./src/common/constants');
 
-DBManager.connectToMongo().catch((error) => {
-	console.error('### Error while connecting to MongoDB client: ');
-	console.error(error);
-});
+// Validate environment variables
+if (!process.env.PORT || !process.env.MONGODB_URI) {
+	console.error('Required environment variables are missing');
+	process.exit(1);
+}
 
-if (process.env.NODE_ENV === ENVIRONMENTS.LOCALHOST) {
+if (process.env.ENABLE_MONGO) {
+	DBManager.connectToMongo().catch((error) => {
+		console.error("### Error while connecting to Mongo");
+		console.error(error);
+		process.exit(1)
+	});
+}
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === ENVIRONMENTS.LOCALHOST) {
 	app.use(cors({ origin: '*' }));
 }
 

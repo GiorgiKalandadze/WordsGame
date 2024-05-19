@@ -1,6 +1,6 @@
-const { RESULT_CODES, RESULT_STATUSES } = require('../constants');
-const DBManager = require('../DBManager');
-const constants = require('../constants');
+const { RESULT_CODES, RESULT_STATUSES } = require('../common/constants');
+const DBManager = require('../common/DBManager');
+const constants = require('../common/constants');
 
 // TODO: Make it as util function and make more general
 function shuffleArray(array) {
